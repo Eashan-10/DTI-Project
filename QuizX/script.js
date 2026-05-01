@@ -11,7 +11,7 @@ let timer;
 let timeLeft = 20; // 10 minutes
 
 // 1. Fetch Data
-fetch("question.json")
+fetch("Q.json")
     .then(res => res.json())
     .then(data => {
         allData = data;
