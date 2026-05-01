@@ -8,7 +8,7 @@ let userAnswers = {};
 
 // ⏱️ TIMER
 let timer;
-let timeLeft = 600; // 10 minutes
+let timeLeft = 20; // 10 minutes
 
 // 1. Fetch Data
 fetch("question.json")
@@ -100,7 +100,9 @@ function startQuiz() {
 
 // ⏱️ TIMER FUNCTION
 function startTimer() {
-    clearInterval(timer);
+    clearInterval(timer); // stop previous timer
+
+    timeLeft = 20; // reset for each question
 
     timer = setInterval(() => {
         let mins = Math.floor(timeLeft / 60);
@@ -113,14 +115,22 @@ function startTimer() {
 
         if (timeLeft < 0) {
             clearInterval(timer);
-            alert("Time's up!");
-            showResult();
+
+            alert("Time's up for this question!");
+
+            // ⏭️ move to next question automatically
+            if (currentIndex < questions.length - 1) {
+                currentIndex++;
+                showquestion();
+            } else {
+                showResult();
+            }
         }
     }, 1000);
 }
-
 // 4. Show Question
 function showquestion() {
+    startTimer();
     let q = questions[currentIndex];
 
     document.getElementById("question-text").innerText =
