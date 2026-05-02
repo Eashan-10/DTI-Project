@@ -1,325 +1,213 @@
 {
   "web": {
     "easy": [
-      {
-        "question": "HTML stands for?",
-        "options": [
-          "Hyper Text Markup Language",
-          "High Text Machine Language",
-          "Hyper Transfer Markup Language",
-          "None"
-        ],
-        "answer": "Hyper Text Markup Language"
-      },
-      {
-        "question": "CSS is used for?",
-        "options": ["Styling", "Logic", "Database", "Server"],
-        "answer": "Styling"
-      },
-      {
-        "question": "Which tag is used for a paragraph?",
-        "options": ["<p>", "<h1>", "<div>", "<br>"],
-        "answer": "<p>"
-      },
-      {
-        "question": "JavaScript is used for?",
-        "options": ["Styling", "Structure", "Logic", "Database"],
-        "answer": "Logic"
-      },
-      {
-        "question": "Which tag is used for JavaScript?",
-        "options": ["<js>", "<script>", "<code>", "<javascript>"],
-        "answer": "<script>"
-      }
+      {"question": "HTML stands for?", "options": ["Hyper Text Markup Language","High Text Machine Language","None","Other"], "answer": "Hyper Text Markup Language"},
+      {"question": "CSS is used for?", "options": ["Styling","Logic","DB","Server"], "answer": "Styling"},
+      {"question": "Tag for paragraph?", "options": ["<p>","<h1>","<div>","<br>"], "answer": "<p>"},
+      {"question": "JS used for?", "options": ["Logic","Style","DB","None"], "answer": "Logic"},
+      {"question": "Image tag?", "options": ["<img>","<pic>","<image>","<src>"], "answer": "<img>"},
+      {"question": "Line break tag?", "options": ["<br>","<hr>","<p>","<lb>"], "answer": "<br>"},
+      {"question": "CSS color property?", "options": ["color","font","bg","text"], "answer": "color"},
+      {"question": "JS constant?", "options": ["const","var","let","define"], "answer": "const"},
+      {"question": "Anchor tag?", "options": ["<a>","<link>","<href>","<url>"], "answer": "<a>"},
+      {"question": "Frontend language?", "options": ["HTML","Node","DB","API"], "answer": "HTML"},
+      {"question": "CSS file extension?", "options": [".css",".html",".js",".txt"], "answer": ".css"},
+      {"question": "JS file extension?", "options": [".js",".css",".html",".java"], "answer": ".js"},
+      {"question": "Heading tag largest?", "options": ["<h1>","<h6>","<p>","<head>"], "answer": "<h1>"},
+      {"question": "Form tag?", "options": ["<form>","<input>","<label>","<data>"], "answer": "<form>"},
+      {"question": "Input tag?", "options": ["<input>","<form>","<text>","<enter>"], "answer": "<input>"},
+      {"question": "Button tag?", "options": ["<button>","<btn>","<click>","<press>"], "answer": "<button>"},
+      {"question": "Table tag?", "options": ["<table>","<tab>","<tr>","<td>"], "answer": "<table>"},
+      {"question": "Row tag?", "options": ["<tr>","<td>","<th>","<row>"], "answer": "<tr>"},
+      {"question": "Cell tag?", "options": ["<td>","<tr>","<th>","<cell>"], "answer": "<td>"},
+      {"question": "CSS used for layout?", "options": ["Flexbox","Loop","DB","Server"], "answer": "Flexbox"}
     ],
 
     "medium": [
-      {
-        "question": "What does DOM stand for?",
-        "options": [
-          "Document Object Model",
-          "Data Object Model",
-          "Digital Output Mode",
-          "None"
-        ],
-        "answer": "Document Object Model"
-      },
-      {
-        "question": "Which property changes text color in CSS?",
-        "options": ["font-color", "color", "text-color", "style-color"],
-        "answer": "color"
-      },
-      {
-        "question": "Which event runs JS code?",
-        "options": ["onclick", "onrun", "onrunjs", "execute"],
-        "answer": "onclick"
-      },
-      {
-        "question": "Which HTML attribute links JS file?",
-        "options": ["src", "href", "link", "script"],
-        "answer": "src"
-      },
-      {
-        "question": "CSS stands for?",
-        "options": [
-          "Cascading Style Sheets",
-          "Color Style Sheets",
-          "Creative Style System",
-          "None"
-        ],
-        "answer": "Cascading Style Sheets"
-      }
+      {"question": "DOM stands for?", "options": ["Document Object Model","Data Model","None","Other"], "answer": "Document Object Model"},
+      {"question": "Event click?", "options": ["onclick","onrun","run","exec"], "answer": "onclick"},
+      {"question": "JS array add?", "options": ["push()","add()","append()","insert()"], "answer": "push()"},
+      {"question": "CSS display?", "options": ["display","show","view","layout"], "answer": "display"},
+      {"question": "Local storage?", "options": ["localStorage","session","cookie","store"], "answer": "localStorage"},
+      {"question": "Selector id?", "options": ["#","#id",".","*"], "answer": "#id"},
+      {"question": "Fetch API?", "options": ["fetch()","call()","api()","run()"], "answer": "fetch()"},
+      {"question": "JSON parse?", "options": ["JSON.parse()","parse()","convert()","read()"], "answer": "JSON.parse()"},
+      {"question": "CSS position?", "options": ["position","place","locate","set"], "answer": "position"},
+      {"question": "JS loop?", "options": ["for","loop","iterate","repeat"], "answer": "for"},
+      {"question": "Flex direction?", "options": ["row","column","none","all"], "answer": "row"},
+      {"question": "Grid system?", "options": ["CSS Grid","Flex","Table","Block"], "answer": "CSS Grid"},
+      {"question": "Event listener?", "options": ["addEventListener","listen","on","run"], "answer": "addEventListener"},
+      {"question": "Async keyword?", "options": ["async","await","promise","then"], "answer": "async"},
+      {"question": "Arrow function?", "options": ["=>","->","==>","none"], "answer": "=>"},
+      {"question": "Set timeout?", "options": ["setTimeout","timeout","delay","wait"], "answer": "setTimeout"},
+      {"question": "Set interval?", "options": ["setInterval","interval","loop","time"], "answer": "setInterval"},
+      {"question": "Query selector?", "options": ["querySelector","select","get","pick"], "answer": "querySelector"},
+      {"question": "Inner HTML?", "options": ["innerHTML","html","content","text"], "answer": "innerHTML"},
+      {"question": "Class selector?", "options": [".class","#class","*class","all"], "answer": ".class"}
     ],
 
     "hard": [
-      {
-        "question": "What is closure in JS?",
-        "options": [
-          "Function inside function with access to outer scope",
-          "Loop concept",
-          "CSS feature",
-          "HTML tag"
-        ],
-        "answer": "Function inside function with access to outer scope"
-      },
-      {
-        "question": "What is async in JavaScript?",
-        "options": [
-          "Runs code sequentially",
-          "Runs code in background",
-          "Stops execution",
-          "None"
-        ],
-        "answer": "Runs code in background"
-      },
-      {
-        "question": "Which method converts JSON to object?",
-        "options": [
-          "JSON.parse()",
-          "JSON.stringify()",
-          "JSON.convert()",
-          "parse.JSON()"
-        ],
-        "answer": "JSON.parse()"
-      },
-      {
-        "question": "What is event bubbling?",
-        "options": [
-          "Event goes from child to parent",
-          "Parent to child",
-          "Random execution",
-          "None"
-        ],
-        "answer": "Event goes from child to parent"
-      },
-      {
-        "question": "Which is used for API calls?",
-        "options": ["fetch()", "call()", "request()", "api()"],
-        "answer": "fetch()"
-      }
+      {"question": "Closure?", "options": ["Function scope","Loop","None","Other"], "answer": "Function scope"},
+      {"question": "Hoisting?", "options": ["Variable lifting","Loop","Memory","None"], "answer": "Variable lifting"},
+      {"question": "Event bubbling?", "options": ["Child to parent","Parent","None","Other"], "answer": "Child to parent"},
+      {"question": "Promise?", "options": ["Async result","Loop","None","Other"], "answer": "Async result"},
+      {"question": "Async await?", "options": ["Async handling","Loop","None","Other"], "answer": "Async handling"},
+      {"question": "This keyword?", "options": ["Current object","Parent","Child","None"], "answer": "Current object"},
+      {"question": "Debounce?", "options": ["Limit calls","Loop","None","Other"], "answer": "Limit calls"},
+      {"question": "Throttle?", "options": ["Control rate","Loop","None","Other"], "answer": "Control rate"},
+      {"question": "Virtual DOM?", "options": ["Copy DOM","Real DOM","None","Other"], "answer": "Copy DOM"},
+      {"question": "Spread operator?", "options": ["...","*","++","--"], "answer": "..."},
+      {"question": "Rest operator?", "options": ["...","*","&","$"], "answer": "..."},
+      {"question": "Map function?", "options": ["transform array","loop","none","other"], "answer": "transform array"},
+      {"question": "Filter function?", "options": ["filter array","loop","none","other"], "answer": "filter array"},
+      {"question": "Reduce?", "options": ["accumulate","loop","none","other"], "answer": "accumulate"},
+      {"question": "Strict mode?", "options": ["use strict","strict()","mode","none"], "answer": "use strict"},
+      {"question": "Module export?", "options": ["export","send","share","none"], "answer": "export"},
+      {"question": "Import?", "options": ["import","load","get","none"], "answer": "import"},
+      {"question": "Callback?", "options": ["function passed","loop","none","other"], "answer": "function passed"},
+      {"question": "Event delegation?", "options": ["parent handles","child handles","none","other"], "answer": "parent handles"},
+      {"question": "Memory leak?", "options": ["unused memory","loop","none","other"], "answer": "unused memory"}
     ]
   },
+"dsa": {
+  "easy": [
+    {"question": "Stack follows?", "options": ["LIFO","FIFO","None","Other"], "answer": "LIFO"},
+    {"question": "Queue follows?", "options": ["FIFO","LIFO","None","Other"], "answer": "FIFO"},
+    {"question": "Array index starts?", "options": ["0","1","-1","2"], "answer": "0"},
+    {"question": "Linear DS?", "options": ["Array","Tree","Graph","Heap"], "answer": "Array"},
+    {"question": "Push used in?", "options": ["Stack","Queue","Tree","Graph"], "answer": "Stack"},
+    {"question": "Pop removes?", "options": ["Top","Bottom","Middle","None"], "answer": "Top"},
+    {"question": "Queue insert?", "options": ["Enqueue","Push","Insert","Add"], "answer": "Enqueue"},
+    {"question": "Queue delete?", "options": ["Dequeue","Pop","Remove","Delete"], "answer": "Dequeue"},
+    {"question": "Linked list?", "options": ["Dynamic","Static","Fixed","None"], "answer": "Dynamic"},
+    {"question": "Tree root?", "options": ["Top node","Leaf","Edge","None"], "answer": "Top node"},
+    {"question": "Binary tree children?", "options": ["2","3","4","1"], "answer": "2"},
+    {"question": "Leaf node?", "options": ["No child","One child","Two child","None"], "answer": "No child"},
+    {"question": "Graph nodes?", "options": ["Vertices","Edges","Links","None"], "answer": "Vertices"},
+    {"question": "Edge connects?", "options": ["Nodes","Array","Stack","None"], "answer": "Nodes"},
+    {"question": "Searching method?", "options": ["Linear","Random","Sort","None"], "answer": "Linear"},
+    {"question": "Sorting type?", "options": ["Bubble","Loop","Graph","None"], "answer": "Bubble"},
+    {"question": "Stack top pointer?", "options": ["Top","Head","Tail","None"], "answer": "Top"},
+    {"question": "Queue front?", "options": ["Front","Top","Head","None"], "answer": "Front"},
+    {"question": "Queue rear?", "options": ["Rear","Tail","End","None"], "answer": "Rear"},
+    {"question": "Traversal means?", "options": ["Visit nodes","Delete","Insert","None"], "answer": "Visit nodes"}
+  ],
 
-  "dsa": {
-    "easy": [
-      {
-        "question": "Stack follows?",
-        "options": ["FIFO", "LIFO", "FILO", "None"],
-        "answer": "LIFO"
-      },
-      {
-        "question": "Queue follows?",
-        "options": ["FIFO", "LIFO", "FILO", "None"],
-        "answer": "FIFO"
-      },
-      {
-        "question": "Array index starts from?",
-        "options": ["0", "1", "-1", "2"],
-        "answer": "0"
-      },
-      {
-        "question": "Which is linear data structure?",
-        "options": ["Tree", "Graph", "Array", "Heap"],
-        "answer": "Array"
-      },
-      {
-        "question": "Push operation is used in?",
-        "options": ["Queue", "Stack", "Tree", "Graph"],
-        "answer": "Stack"
-      }
-    ],
+  "medium": [
+    {"question": "Binary search complexity?", "options": ["O(log n)","O(n)","O(1)","O(n^2)"], "answer": "O(log n)"},
+    {"question": "Linear search complexity?", "options": ["O(n)","O(log n)","O(1)","O(n^2)"], "answer": "O(n)"},
+    {"question": "BST property?", "options": ["Left<Root<Right","Right<Left","None","Other"], "answer": "Left<Root<Right"},
+    {"question": "DFS uses?", "options": ["Stack","Queue","Heap","Array"], "answer": "Stack"},
+    {"question": "BFS uses?", "options": ["Queue","Stack","Heap","Array"], "answer": "Queue"},
+    {"question": "Heap type?", "options": ["Min/Max","Stack","Queue","None"], "answer": "Min/Max"},
+    {"question": "Hashing?", "options": ["Mapping","Sorting","Search","None"], "answer": "Mapping"},
+    {"question": "Traversal inorder?", "options": ["LNR","NRL","RLN","None"], "answer": "LNR"},
+    {"question": "Traversal preorder?", "options": ["NLR","LNR","RLN","None"], "answer": "NLR"},
+    {"question": "Traversal postorder?", "options": ["LRN","NLR","LNR","None"], "answer": "LRN"},
+    {"question": "Adjacency matrix?", "options": ["Graph","Tree","Array","Stack"], "answer": "Graph"},
+    {"question": "Cycle detection?", "options": ["DFS","Sort","Loop","None"], "answer": "DFS"},
+    {"question": "Queue complexity?", "options": ["O(1)","O(n)","O(log n)","None"], "answer": "O(1)"},
+    {"question": "Stack complexity?", "options": ["O(1)","O(n)","O(log n)","None"], "answer": "O(1)"},
+    {"question": "Merge sort?", "options": ["Divide","Loop","Search","None"], "answer": "Divide"},
+    {"question": "Quick sort?", "options": ["Partition","Merge","Sort","None"], "answer": "Partition"},
+    {"question": "Recursion?", "options": ["Self call","Loop","None","Other"], "answer": "Self call"},
+    {"question": "Dynamic DS?", "options": ["Linked list","Array","Stack","None"], "answer": "Linked list"},
+    {"question": "Graph representation?", "options": ["Matrix","Stack","Queue","None"], "answer": "Matrix"},
+    {"question": "Height of tree?", "options": ["Levels","Nodes","Edges","None"], "answer": "Levels"}
+  ],
 
-    "medium": [
-      {
-        "question": "Time complexity of binary search?",
-        "options": ["O(n)", "O(log n)", "O(n^2)", "O(1)"],
-        "answer": "O(log n)"
-      },
-      {
-        "question": "Which uses FIFO?",
-        "options": ["Stack", "Queue", "Tree", "Graph"],
-        "answer": "Queue"
-      },
-      {
-        "question": "Which data structure uses recursion?",
-        "options": ["Queue", "Stack", "Array", "Heap"],
-        "answer": "Stack"
-      },
-      {
-        "question": "Linked list is?",
-        "options": ["Static", "Dynamic", "Fixed", "None"],
-        "answer": "Dynamic"
-      },
-      {
-        "question": "Worst case of linear search?",
-        "options": ["O(1)", "O(n)", "O(log n)", "O(n^2)"],
-        "answer": "O(n)"
-      }
-    ],
+  "hard": [
+    {"question": "AVL tree?", "options": ["Balanced BST","Heap","Stack","None"], "answer": "Balanced BST"},
+    {"question": "Dijkstra?", "options": ["Shortest path","Sort","Search","None"], "answer": "Shortest path"},
+    {"question": "Merge sort complexity?", "options": ["O(n log n)","O(n)","O(n^2)","O(1)"], "answer": "O(n log n)"},
+    {"question": "Quick sort worst?", "options": ["O(n^2)","O(n)","O(log n)","O(1)"], "answer": "O(n^2)"},
+    {"question": "Dynamic programming?", "options": ["Optimization","Sorting","Loop","None"], "answer": "Optimization"},
+    {"question": "Greedy algo?", "options": ["Local optimal","Global","None","Other"], "answer": "Local optimal"},
+    {"question": "Trie used for?", "options": ["Strings","Numbers","Tree","None"], "answer": "Strings"},
+    {"question": "Graph cycle?", "options": ["Loop","Tree","None","Other"], "answer": "Loop"},
+    {"question": "Spanning tree?", "options": ["Connect graph","Sort","Search","None"], "answer": "Connect graph"},
+    {"question": "Topological sort?", "options": ["DAG","Tree","Array","None"], "answer": "DAG"},
+    {"question": "Heap sort?", "options": ["Heap","Tree","Stack","None"], "answer": "Heap"},
+    {"question": "Bellman Ford?", "options": ["Shortest path","Sort","Search","None"], "answer": "Shortest path"},
+    {"question": "Floyd Warshall?", "options": ["All pairs","Sort","Loop","None"], "answer": "All pairs"},
+    {"question": "Backtracking?", "options": ["Try all","Loop","None","Other"], "answer": "Try all"},
+    {"question": "NP problem?", "options": ["Non polynomial","Loop","None","Other"], "answer": "Non polynomial"},
+    {"question": "Graph density?", "options": ["Edges vs nodes","Nodes","Edges","None"], "answer": "Edges vs nodes"},
+    {"question": "Red Black tree?", "options": ["Balanced","Heap","Stack","None"], "answer": "Balanced"},
+    {"question": "Segment tree?", "options": ["Range query","Loop","None","Other"], "answer": "Range query"},
+    {"question": "Fenwick tree?", "options": ["Prefix sum","Loop","None","Other"], "answer": "Prefix sum"},
+    {"question": "Amortized analysis?", "options": ["Average cost","Worst","Best","None"], "answer": "Average cost"}
+  ]
+},
 
-    "hard": [
-      {
-        "question": "Height of balanced BST?",
-        "options": ["O(n)", "O(log n)", "O(n^2)", "O(1)"],
-        "answer": "O(log n)"
-      },
-      {
-        "question": "Graph traversal using BFS uses?",
-        "options": ["Stack", "Queue", "Array", "Heap"],
-        "answer": "Queue"
-      },
-      {
-        "question": "DFS uses?",
-        "options": ["Queue", "Stack", "Heap", "Array"],
-        "answer": "Stack"
-      },
-      {
-        "question": "Heap is used for?",
-        "options": ["Sorting", "Searching", "Traversal", "None"],
-        "answer": "Sorting"
-      },
-      {
-        "question": "Which is not linear DS?",
-        "options": ["Array", "Stack", "Queue", "Tree"],
-        "answer": "Tree"
-      }
-    ]
-  },
+"cpp": {
+  "easy": [
+    {"question": "C++ supports?", "options": ["OOP","Procedural","None","Other"], "answer": "OOP"},
+    {"question": "Header for I/O?", "options": ["<iostream>","<stdio>","<input>","None"], "answer": "<iostream>"},
+    {"question": "cout used for?", "options": ["Output","Input","Loop","None"], "answer": "Output"},
+    {"question": "cin used for?", "options": ["Input","Output","Loop","None"], "answer": "Input"},
+    {"question": "Extension?", "options": [".cpp",".c",".py",".java"], "answer": ".cpp"},
+    {"question": "Loop keyword?", "options": ["for","loop","repeat","None"], "answer": "for"},
+    {"question": "Break does?", "options": ["Stop loop","Continue","Start","None"], "answer": "Stop loop"},
+    {"question": "Continue does?", "options": ["Skip","Stop","Break","None"], "answer": "Skip"},
+    {"question": "Variable type?", "options": ["int","loop","func","none"], "answer": "int"},
+    {"question": "Boolean?", "options": ["true/false","yes/no","1/2","none"], "answer": "true/false"},
+    {"question": "Main function?", "options": ["main()","start()","run()","init()"], "answer": "main()"},
+    {"question": "Semicolon?", "options": ["End statement","Loop","None","Other"], "answer": "End statement"},
+    {"question": "Comment single line?", "options": ["//","/* */","#","--"], "answer": "//"},
+    {"question": "Multi-line comment?", "options": ["/* */","//","#","--"], "answer": "/* */"},
+    {"question": "Namespace std?", "options": ["Standard","Custom","Loop","None"], "answer": "Standard"},
+    {"question": "Return type?", "options": ["int","float","void","all"], "answer": "int"},
+    {"question": "Operator +?", "options": ["Add","Sub","Mul","Div"], "answer": "Add"},
+    {"question": "Operator -?", "options": ["Sub","Add","Mul","Div"], "answer": "Sub"},
+    {"question": "Operator *?", "options": ["Mul","Add","Sub","Div"], "answer": "Mul"},
+    {"question": "Operator /?", "options": ["Div","Mul","Add","Sub"], "answer": "Div"}
+  ],
 
-  "cpp": {
-    "easy": [
-      {
-        "question": "C++ supports?",
-        "options": ["OOP", "Only Procedural", "Only Functional", "None"],
-        "answer": "OOP"
-      },
-      {
-        "question": "Header file for input/output?",
-        "options": ["<iostream>", "<stdio>", "<input>", "<stream>"],
-        "answer": "<iostream>"
-      },
-      {
-        "question": "C++ extension is?",
-        "options": [".cpp", ".c", ".java", ".py"],
-        "answer": ".cpp"
-      },
-      {
-        "question": "cout is used for?",
-        "options": ["Input", "Output", "Loop", "Condition"],
-        "answer": "Output"
-      },
-      {
-        "question": "cin is used for?",
-        "options": ["Input", "Output", "Loop", "None"],
-        "answer": "Input"
-      }
-    ],
+  "medium": [
+    {"question": "Constructor?", "options": ["Init object","Destroy","Compile","None"], "answer": "Init object"},
+    {"question": "Destructor?", "options": ["Destroy object","Init","Compile","None"], "answer": "Destroy object"},
+    {"question": "Scope operator?", "options": ["::",":",".","->"], "answer": "::"},
+    {"question": "Pointer stores?", "options": ["Address","Value","None","Other"], "answer": "Address"},
+    {"question": "Dynamic memory?", "options": ["new","malloc","alloc","create"], "answer": "new"},
+    {"question": "Class keyword?", "options": ["class","struct","obj","none"], "answer": "class"},
+    {"question": "Object?", "options": ["Instance","Class","Func","None"], "answer": "Instance"},
+    {"question": "Friend function?", "options": ["Outside access","Inside","None","Other"], "answer": "Outside access"},
+    {"question": "Inline function?", "options": ["Fast","Slow","None","Other"], "answer": "Fast"},
+    {"question": "Reference?", "options": ["Alias","Pointer","None","Other"], "answer": "Alias"},
+    {"question": "Static keyword?", "options": ["Shared","Private","Loop","None"], "answer": "Shared"},
+    {"question": "Const keyword?", "options": ["Constant","Variable","Loop","None"], "answer": "Constant"},
+    {"question": "Structure?", "options": ["struct","class","obj","none"], "answer": "struct"},
+    {"question": "Enum?", "options": ["User type","Loop","None","Other"], "answer": "User type"},
+    {"question": "Switch?", "options": ["Multiple choice","Loop","None","Other"], "answer": "Multiple choice"},
+    {"question": "While loop?", "options": ["Condition loop","For loop","None","Other"], "answer": "Condition loop"},
+    {"question": "Do while?", "options": ["Exec once","Loop","None","Other"], "answer": "Exec once"},
+    {"question": "Array?", "options": ["Collection","Loop","None","Other"], "answer": "Collection"},
+    {"question": "Function?", "options": ["Reusable code","Loop","None","Other"], "answer": "Reusable code"},
+    {"question": "Call by value?", "options": ["Copy","Reference","None","Other"], "answer": "Copy"}
+  ],
 
-    "medium": [
-      {
-        "question": "Scope resolution operator?",
-        "options": ["::", ":", ".", "->"],
-        "answer": "::"
-      },
-      {
-        "question": "Constructor is used for?",
-        "options": ["Destroy object", "Initialize object", "Compile", "Run"],
-        "answer": "Initialize object"
-      },
-      {
-        "question": "Which keyword creates object?",
-        "options": ["class", "new", "object", "create"],
-        "answer": "new"
-      },
-      {
-        "question": "Friend function is?",
-        "options": [
-          "Inside class",
-          "Outside class but has access",
-          "Destructor",
-          "Constructor"
-        ],
-        "answer": "Outside class but has access"
-      },
-      {
-        "question": "Operator overloading is?",
-        "options": [
-          "Changing meaning of operators",
-          "Deleting operators",
-          "Loop concept",
-          "None"
-        ],
-        "answer": "Changing meaning of operators"
-      }
-    ],
-
-    "hard": [
-      {
-        "question": "Destructor is used for?",
-        "options": [
-          "Initialize object",
-          "Destroy object",
-          "Compile program",
-          "None"
-        ],
-        "answer": "Destroy object"
-      },
-      {
-        "question": "Virtual function is used for?",
-        "options": [
-          "Compile time polymorphism",
-          "Runtime polymorphism",
-          "Memory allocation",
-          "None"
-        ],
-        "answer": "Runtime polymorphism"
-      },
-      {
-        "question": "What is inheritance?",
-        "options": [
-          "One class gets properties of another",
-          "Deleting class",
-          "Function overloading",
-          "None"
-        ],
-        "answer": "One class gets properties of another"
-      },
-      {
-        "question": "Which supports multiple inheritance?",
-        "options": ["Java", "C++", "Python only", "C"],
-        "answer": "C++"
-      },
-      {
-        "question": "STL stands for?",
-        "options": [
-          "Standard Template Library",
-          "System Tool Library",
-          "Simple Template Logic",
-          "None"
-        ],
-        "answer": "Standard Template Library"
-      }
-    ]
-  }
+  "hard": [
+    {"question": "Polymorphism?", "options": ["Many forms","Single","None","Other"], "answer": "Many forms"},
+    {"question": "Inheritance?", "options": ["Reuse","Delete","None","Other"], "answer": "Reuse"},
+    {"question": "Virtual function?", "options": ["Runtime","Compile","None","Other"], "answer": "Runtime"},
+    {"question": "Encapsulation?", "options": ["Data hiding","Expose","None","Other"], "answer": "Data hiding"},
+    {"question": "Abstraction?", "options": ["Hide details","Show","None","Other"], "answer": "Hide details"},
+    {"question": "STL?", "options": ["Library","Tool","None","Other"], "answer": "Library"},
+    {"question": "Template?", "options": ["Generic","Specific","None","Other"], "answer": "Generic"},
+    {"question": "Operator overloading?", "options": ["Modify operator","Delete","None","Other"], "answer": "Modify operator"},
+    {"question": "Exception handling?", "options": ["Error control","Loop","None","Other"], "answer": "Error control"},
+    {"question": "File handling?", "options": ["fstream","iostream","None","Other"], "answer": "fstream"},
+    {"question": "Multiple inheritance?", "options": ["Yes","No","Partial","None"], "answer": "Yes"},
+    {"question": "Overloading?", "options": ["Same name","Different","None","Other"], "answer": "Same name"},
+    {"question": "Overriding?", "options": ["Redefine","Loop","None","Other"], "answer": "Redefine"},
+    {"question": "Pure virtual?", "options": ["Abstract","Concrete","None","Other"], "answer": "Abstract"},
+    {"question": "Smart pointer?", "options": ["Auto manage","Manual","None","Other"], "answer": "Auto manage"},
+    {"question": "Lambda?", "options": ["Inline func","Loop","None","Other"], "answer": "Inline func"},
+    {"question": "Move semantics?", "options": ["Transfer","Copy","None","Other"], "answer": "Transfer"},
+    {"question": "RAII?", "options": ["Resource mgmt","Loop","None","Other"], "answer": "Resource mgmt"},
+    {"question": "Vector?", "options": ["Dynamic array","Static","None","Other"], "answer": "Dynamic array"},
+    {"question": "Map?", "options": ["Key value","List","None","Other"], "answer": "Key value"}
+  ]
 }
-
+}
