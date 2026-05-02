@@ -1,10 +1,14 @@
-const TARGET_QUESTIONS = 50; 
+const TARGET_QUESTIONS = 20; 
 const MIN_TO_SUBMIT = 10; 
 
 let allData = {};
 let questions = [];
 let currentIndex = 0;
 let userAnswers = {}; 
+
+// ⏱️ TIMER
+let timer;
+let timeLeft = 600; // 10 minutes
 
 // 1. Fetch Data
 fetch("question.json")
@@ -23,51 +27,42 @@ document.getElementById("next-btn").addEventListener("click", () => {
     if (currentIndex < questions.length - 1) {
         currentIndex++;
         showquestion();
-    } else {
-        let totalSolved = Object.keys(userAnswers).length;
-        if (totalSolved < TARGET_QUESTIONS) {
-            alert(`You finished this set. You have ${totalSolved}/${TARGET_QUESTIONS} solved. Click 'Change Quiz' for more, or 'Submit Quiz' to finish early!`);
-        } else {
-            alert("You have reached 50 questions! Click 'Submit Quiz' to finish.");
-        }
     }
 });
 
 document.getElementById("skip-btn").addEventListener("click", () => {
-    if (currentIndex < questions.length - 1) {
-        currentIndex++;
+    currentIndex++;
+    if (currentIndex < questions.length) {
         showquestion();
     }
 });
 
 document.getElementById("submit-btn").addEventListener("click", () => {
-    let totalSolved = Object.keys(userAnswers).length;
-    
-    if (totalSolved < MIN_TO_SUBMIT) {
-        alert(`You must solve at least ${MIN_TO_SUBMIT} questions to submit! You have only solved ${totalSolved}.`);
-        return;
+    let totalSolved = 0;
+    for (let key in userAnswers) {
+        totalSolved++;
     }
     
-    if (totalSolved < TARGET_QUESTIONS) {
-        let confirmEarly = confirm(`You have only solved ${totalSolved} out of ${TARGET_QUESTIONS} questions. Submitting now will score the rest as 0. Are you sure?`);
-        if (!confirmEarly) {
-            return; 
-        }
+    if (totalSolved < MIN_TO_SUBMIT) {
+        alert(`Solve at least ${MIN_TO_SUBMIT} questions first!`);
+        return;
     }
     
     showResult();
 });
 
-// 3. Quiz Functions
+// 3. Start Quiz
 function startQuiz() {
     let category = document.getElementById("category").value;
     let difficulty = document.getElementById("difficulty").value;
     let username = document.getElementById("username").value;
 
     if (!category || !difficulty || !username.trim()) {
-        alert("Please enter your name and select Category & Difficulty!");
+        alert("Fill all fields!");
         return;
     }
+
+    
 
     if (difficulty === "all") {
         questions = [
@@ -79,26 +74,68 @@ function startQuiz() {
         questions = allData[category][difficulty];
     }
 
-    currentIndex = 0;
+    // Shuffle questions
+    for (let i = questions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [questions[i], questions[j]] = [questions[j], questions[i]];
+}
 
+    currentIndex = 0;
+    userAnswers = {};
+    timeLeft = 120;
+
+    // UI
     document.getElementById("setup-section").style.display = "none";
     document.getElementById("quiz-section").style.display = "block";
     document.getElementById("result-section").style.display = "none";
     document.getElementById("submit-btn").style.display = "block";
-    
-    // Show Sidebar during quiz
-    document.getElementById("sidebar").style.display = "block"; 
-    
-    document.getElementById("username").readOnly = true;
+    document.getElementById("sidebar").style.display = "block";
 
+    document.getElementById("username").readOnly = true;
+    document.getElementById("player-name").innerText = username;
+    document.getElementById("current-category").innerText = category;
+
+    startTimer(); // ⏱️ start timer
     updateSubmitButton();
     updateSidebar();
     showquestion();
 }
 
+// ⏱️ TIMER FUNCTION
+let timer;
+
+function startTimer() {
+    clearInterval(timer);
+
+    timer = setInterval(function () {
+
+        let mins = Math.floor(timeLeft / 60);
+        let secs = timeLeft % 60;
+
+        if (secs < 10) {
+            secs = "0" + secs;   // make 5 → 05
+        }
+
+        document.getElementById("timer").innerText = mins + ":" + secs;
+
+        timeLeft = timeLeft - 1;
+
+        if (timeLeft < 0) {
+            clearInterval(timer);
+            alert("Time up");
+            showResult();
+        }
+
+    }, 1000);
+}
+
+// 4. Show Question
 function showquestion() {
     let q = questions[currentIndex];
-    document.getElementById("question-text").innerText = `${currentIndex + 1}. ${q.question}`;
+
+    document.getElementById("question-text").innerText =
+        `${currentIndex + 1}. ${q.question}`;
+
 
     let container = document.getElementById("options-container");
     container.innerHTML = "";
@@ -108,8 +145,9 @@ function showquestion() {
         btn.innerText = opt;
         btn.className = "option-btn";
 
+        // ✅ highlight selected
         if (userAnswers[q.question] && userAnswers[q.question].selected === opt) {
-            btn.style.background = "#add8e6"; 
+            btn.style.background = "#add8e6";
             btn.style.border = "2px solid #007bff";
         }
 
@@ -118,7 +156,8 @@ function showquestion() {
                 selected: opt,
                 correct: q.answer
             };
-            showquestion(); 
+
+            showquestion(); // refresh UI
             updateSubmitButton();
             updateSidebar();
         });
@@ -127,64 +166,73 @@ function showquestion() {
     });
 }
 
+// 5. Submit Button Update
 function updateSubmitButton() {
     let btn = document.getElementById("submit-btn");
-    let totalSolved = Object.keys(userAnswers).length;
     
-    let remainingToMinimum = MIN_TO_SUBMIT - totalSolved;
+    let totalSolved = 0;
 
-    if (remainingToMinimum <= 0) {
+    for (let key in userAnswers) {
+        totalSolved++;
+    }
+    
+    let remaining = MIN_TO_SUBMIT - totalSolved;
+
+    if (remaining <= 0) {
         btn.innerText = `Submit Quiz (${totalSolved}/${TARGET_QUESTIONS})`;
         btn.disabled = false;
         btn.style.opacity = "1";
     } else {
-        btn.innerText = `Solve ${remainingToMinimum} more to unlock Submit`;
+        btn.innerText = `Solve ${remaining} more`;
         btn.disabled = true;
         btn.style.opacity = "0.5";
     }
 }
 
+// Sidebar
 function updateSidebar() {
-    let totalSolved = Object.keys(userAnswers).length;
-    let catSelect = document.getElementById("category").value;
-    let diffSelect = document.getElementById("difficulty").value;
+     let totalSolved = 0;
 
-    document.getElementById("side-category").innerText = catSelect || "-";
-    document.getElementById("side-difficulty").innerText = diffSelect || "-";
-    document.getElementById("side-solved").innerText = `${totalSolved} / ${TARGET_QUESTIONS}`;
+    for (let key in userAnswers) {
+        totalSolved++;
+    }
+    
+    document.getElementById("side-solved").innerText =
+        `${totalSolved} / ${TARGET_QUESTIONS}`;
 }
 
+
 function showResult() {
+    clearInterval(timer);
+
     document.getElementById("quiz-section").style.display = "none";
     document.getElementById("submit-btn").style.display = "none";
     document.getElementById("result-section").style.display = "block";
-    
-    // Hide Sidebar on results screen
     document.getElementById("sidebar").style.display = "none";
 
     let score = 0;
-    
-    for (const questionText in userAnswers) {
-        if (userAnswers[questionText].selected === userAnswers[questionText].correct) {
+
+    for (const q in userAnswers) {
+        if (userAnswers[q].selected === userAnswers[q].correct) {
             score++;
         }
     }
 
-    document.getElementById("final-score").innerText = `Your score: ${score} / ${TARGET_QUESTIONS}`;
-    
+    document.getElementById("final-score").innerText =
+        `Your score: ${score} / ${TARGET_QUESTIONS}`;
+
     let percent = (score / TARGET_QUESTIONS) * 100;
     let msg = percent >= 80 ? "Excellent!" : percent >= 50 ? "Good Job!" : "Keep Practicing!";
     document.getElementById("performance-msg").innerText = msg;
 
-    let currentUsername = document.getElementById("username").value;
-    saveToLeaderboard(currentUsername, score);
+    saveToLeaderboard(document.getElementById("username").value, score);
 }
 
-// 4. Leaderboard Functions
+// 7. Leaderboard
 function saveToLeaderboard(name, score) {
     let leaderboard = JSON.parse(localStorage.getItem("brainBuzzLeaderboard")) || [];
 
-    leaderboard.push({ name: name, score: score });
+    leaderboard.push({ name, score });
     leaderboard.sort((a, b) => b.score - a.score);
     leaderboard = leaderboard.slice(0, 5);
 
@@ -194,54 +242,19 @@ function saveToLeaderboard(name, score) {
 
 function displayLeaderboard() {
     let leaderboard = JSON.parse(localStorage.getItem("brainBuzzLeaderboard")) || [];
-    let listElement = document.getElementById("leaderboard-section");
-    listElement.innerHTML = ""; 
+    let list = document.getElementById("leaderboard-section");
 
-    if (leaderboard.length === 0) {
-        listElement.innerHTML = "<li>No scores yet. Be the first to play!</li>";
-        return;
-    }
+    list.innerHTML = "";
 
-    leaderboard.forEach((player, index) => {
+    leaderboard.forEach(player => {
         let li = document.createElement("li");
-        li.style.padding = "5px 0";
-        li.style.fontSize = "1.2rem";
-        
-        let medal = index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : "🔹";
-        li.innerText = `${medal} ${player.name}: ${player.score} / ${TARGET_QUESTIONS}`;
-        listElement.appendChild(li);
+        li.innerText = `${player.name} - ${player.score}`;
+        list.appendChild(li);
     });
 }
 
-// 5. Navigation Functions
-function goBack() {
-    document.getElementById("setup-section").style.display = "block";
-    document.getElementById("quiz-section").style.display = "none";
-    document.getElementById("result-section").style.display = "none";
-    document.getElementById("submit-btn").style.display = "none";
-    
-    // Hide Sidebar on main menu
-    document.getElementById("sidebar").style.display = "none";
-
-    currentIndex = 0;
-    questions = [];
-    
-    updateSidebar();
-}
-
+// 8. Restart
 function restartApp() {
-    document.getElementById("setup-section").style.display = "block";
-    document.getElementById("quiz-section").style.display = "none";
-    document.getElementById("result-section").style.display = "none";
-    document.getElementById("submit-btn").style.display = "none";
-    
-    // Hide Sidebar on full restart
-    document.getElementById("sidebar").style.display = "none";
-
-    document.getElementById("username").readOnly = false;
-    userAnswers = {}; 
-    currentIndex = 0;
-    questions = [];
-    
-    updateSidebar();
+    clearInterval(timer);
+    location.reload();
 }
