@@ -1,5 +1,10 @@
 const TARGET_QUESTIONS = 20; 
 const MIN_TO_SUBMIT = 10; 
+const categoryMap = {
+    web: "Web Development",
+    dsa: "Data Structures",
+    cpp: "C++"
+};
 
 let allData = {};
 let questions = [];
@@ -8,8 +13,7 @@ let userAnswers = {};
 
 // ⏱️ TIMER
 let timer;
-let timeLeft = 20; // 10 minutes
-
+let timeLeft = 600; // 20 sec
 // 1. Fetch Data
 fetch("Q.json")
     .then(res => res.json())
@@ -52,6 +56,12 @@ document.getElementById("submit-btn").addEventListener("click", () => {
 function startQuiz() {
     let category = document.getElementById("category").value;
     let difficulty = document.getElementById("difficulty").value;
+
+    document.getElementById("side-category").innerText =
+        categoryMap[category.toLowerCase()] || category;
+
+    document.getElementById("side-difficulty").innerText =
+        difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
     let username = document.getElementById("username").value;
 
     if (!category || !difficulty || !username.trim()) {
@@ -102,7 +112,7 @@ function startQuiz() {
 function startTimer() {
     clearInterval(timer); // stop previous timer
 
-    timeLeft = 20; // reset for each question
+    timeLeft = 600; // reset for each question
 
     timer = setInterval(() => {
         let mins = Math.floor(timeLeft / 60);
@@ -130,7 +140,6 @@ function startTimer() {
 }
 // 4. Show Question
 function showquestion() {
-    startTimer();
     let q = questions[currentIndex];
 
     document.getElementById("question-text").innerText =
@@ -191,7 +200,7 @@ function updateSubmitButton() {
 function updateSidebar() {
     let totalSolved = Object.keys(userAnswers).length;
     document.getElementById("side-solved").innerText =
-        `${totalSolved} / ${TARGET_QUESTIONS}`;
+    `${Object.keys(userAnswers).length} / ${TARGET_QUESTIONS}`;
 }
 
 // 6. Result
